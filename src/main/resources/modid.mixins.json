@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.example.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinClientBoundChunkPacket",
+    "MixinClientChunkCache",
+    "MixinClientPacketListener",
+    "MixinLevelChunkLevelChunk",
+    "MixinNoiseChunkGenerator"
+  ],
+  "client": [
+    "ExtendWorldHeight"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
