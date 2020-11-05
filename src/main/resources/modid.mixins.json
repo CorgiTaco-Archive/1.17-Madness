@@ -7,6 +7,7 @@
     "MixinClientBoundChunkPacket",
     "MixinClientChunkCache",
     "MixinClientPacketListener",
+    "MixinIntegratedServer",
     "MixinLevelChunkLevelChunk",
     "MixinNoiseChunkGenerator"
   ],
