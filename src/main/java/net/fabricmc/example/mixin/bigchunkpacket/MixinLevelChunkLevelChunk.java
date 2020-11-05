@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package net.fabricmc.example.mixin.bigchunkpacket;
 
 import net.fabricmc.example.getterintefaces.BitStorageChunkPacketDataLevelChunk;
 import net.minecraft.core.BlockPos;

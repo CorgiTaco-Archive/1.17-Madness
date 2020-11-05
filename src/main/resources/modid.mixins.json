@@ -4,11 +4,11 @@
   "package": "net.fabricmc.example.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinClientBoundChunkPacket",
-    "MixinClientChunkCache",
-    "MixinClientPacketListener",
+    "bigchunkpacket.MixinClientBoundChunkPacket",
+    "bigchunkpacket.MixinClientChunkCache",
+    "bigchunkpacket.MixinClientPacketListener",
     "MixinIntegratedServer",
-    "MixinLevelChunkLevelChunk",
+    "bigchunkpacket.MixinLevelChunkLevelChunk",
     "MixinNoiseChunkGenerator"
   ],
   "client": [

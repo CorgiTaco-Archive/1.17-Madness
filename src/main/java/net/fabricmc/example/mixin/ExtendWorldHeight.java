@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(Level.class)
-public class ExtendWorldHeight {
+public abstract class ExtendWorldHeight {
 
 	/**
 	 * @author CorgiTaco

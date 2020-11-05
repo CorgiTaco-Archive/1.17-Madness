@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package net.fabricmc.example.mixin.bigchunkpacket;
 
 import net.fabricmc.example.getterintefaces.BitStorageChunkPacketDataClientChunkCache;
 import net.fabricmc.example.getterintefaces.BitStorageChunkPacketDataLevelChunk;
@@ -34,11 +34,6 @@ public abstract class MixinClientChunkCache implements BitStorageChunkPacketData
 
     @Override
     public LevelChunk replaceWithBitStoragePacketData(int i, int j, @Nullable ChunkBiomeContainer chunkBiomeContainer, FriendlyByteBuf friendlyByteBuf, CompoundTag compoundTag, BitStorage bitStorage) {
-        return replaceWithPacketData(i, j, chunkBiomeContainer, friendlyByteBuf, compoundTag, bitStorage);
-    }
-
-
-    public LevelChunk replaceWithPacketData(int i, int j, @Nullable ChunkBiomeContainer chunkBiomeContainer, FriendlyByteBuf friendlyByteBuf, CompoundTag compoundTag, BitStorage bitStorage) {
         if (!this.storage.inRange(i, j)) {
             LOGGER.warn("Ignoring chunk since it's not in the view range: {}, {}", i, j);
             return null;

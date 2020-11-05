@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package net.fabricmc.example.mixin.bigchunkpacket;
 
 import net.fabricmc.example.getterintefaces.BitStorageChunkPacketDataClientChunkCache;
 import net.fabricmc.example.getterintefaces.BitStorageGetter;
@@ -20,10 +20,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-import java.util.Iterator;
-
 @Mixin(ClientPacketListener.class)
-public class MixinClientPacketListener {
+public abstract class MixinClientPacketListener {
 
     @Shadow @Final private Minecraft minecraft;
 
@@ -47,10 +45,7 @@ public class MixinClientPacketListener {
         }
 
         if (levelChunk != null) {
-            Iterator var10 = clientboundLevelChunkPacket.getBlockEntitiesTags().iterator();
-
-            while(var10.hasNext()) {
-                CompoundTag compoundTag = (CompoundTag)var10.next();
+            for (CompoundTag compoundTag : clientboundLevelChunkPacket.getBlockEntitiesTags()) {
                 BlockPos blockPos = new BlockPos(compoundTag.getInt("x"), compoundTag.getInt("y"), compoundTag.getInt("z"));
                 BlockEntity blockEntity = levelChunk.getBlockEntity(blockPos, LevelChunk.EntityCreationType.IMMEDIATE);
                 if (blockEntity != null) {
@@ -58,6 +53,5 @@ public class MixinClientPacketListener {
                 }
             }
         }
-
     }
 }

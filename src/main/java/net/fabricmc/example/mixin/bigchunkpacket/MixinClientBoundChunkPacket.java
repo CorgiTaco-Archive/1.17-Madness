@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package net.fabricmc.example.mixin.bigchunkpacket;
 
 import io.netty.buffer.ByteBuf;
 import net.fabricmc.example.getterintefaces.BitStorageGetter;
@@ -25,7 +25,6 @@ public abstract class MixinClientBoundChunkPacket implements BitStorageGetter {
         this.extendedSectionStorage = this.extractExtendedSectionChunkData(new FriendlyByteBuf(this.getWriteBuffer()), levelChunk);
     }
 
-    //
     private BitStorage extractExtendedSectionChunkData(FriendlyByteBuf friendlyByteBuf, LevelChunk levelChunk) {
         LevelChunkSection[] levelChunkSections = levelChunk.getSections();
         int chunkSectionIDX = 0;

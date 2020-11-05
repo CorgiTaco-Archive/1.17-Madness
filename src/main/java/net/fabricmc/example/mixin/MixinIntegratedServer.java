@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(IntegratedServer.class)
-public class MixinIntegratedServer {
+public abstract class MixinIntegratedServer {
 
 	//Sets the new height and removes the warning players recieve when attempting to place blocks beyond 256.
 	@ModifyConstant(method = "<init>", constant = @Constant(intValue = 256))
